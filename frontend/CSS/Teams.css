@@ -1,0 +1,1452 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+#container{
+    width: 100%;
+    background-color: whitesmoke;
+    position: relative;
+    height: 100vh;
+    overflow-y: auto;
+ display: flex;
+ flex-direction: column;
+ gap: 3rem;
+ padding-bottom: 5rem;
+}
+.Tam-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    height: 100%;
+}
+.team-banner{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.team-banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.team-banner-cover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* background-color: rgba(0, 0, 0, 0.605); */
+    top: 0;
+    left: 0;
+    display: flex;
+}
+#barca-specified .team-banner-cover{
+    background: linear-gradient(0deg, rgb(0, 0, 0,.9) 10%,  rgba(64, 27, 40, 0.6) 38%, rgba(93, 38, 57, 0.3) 56%, rgba(24, 74, 135, 0) 90%);
+}
+#dortmund-specified .team-banner-cover{
+    background: linear-gradient(0deg, rgb(0, 0, 0,.9) 10%,  rgba(64, 60, 27, 0.6) 38%, rgba(128, 110, 43, 0.3) 56%, rgba(24, 74, 135, 0) 90%);
+}
+#arsenal-specified .team-banner-cover{
+    background: linear-gradient(0deg, rgb(0, 0, 0,.9) 10%,  rgba(93, 27, 27, 0.6) 38%, rgba(102, 31, 44, 0.3) 56%, rgba(131, 23, 23, 0) 90%);
+}
+#galatasaray-specified .team-banner-cover{
+    background: linear-gradient(0deg, rgb(0, 0, 0,.9) 10%,  rgba(93, 27, 27, 0.6) 38%, rgba(102, 31, 44, 0.3) 56%, rgba(131, 23, 23, 0) 90%);
+}
+#west-specified .team-banner-cover{
+    background: linear-gradient(0deg, rgb(0, 0, 0,.9) 10%,  rgba(64, 27, 40, 0.6) 38%, rgba(93, 38, 57, 0.5) 56%, rgba(0, 0, 0, 0.1) 90%);
+}
+#psg-specified .team-banner-cover{
+    background: linear-gradient(0deg, rgb(0, 0, 0,.9) 10%,  rgba(32, 23, 88, 0.6) 38%, rgba(45, 28, 115, 0.3) 56%, rgba(30, 23, 131, 0) 90%);
+}
+#juventus-specified .team-banner-cover {
+    background: linear-gradient(0deg, rgb(0, 0, 0,.9) 10%, rgba(0, 0, 0, 0.6) 38%, rgba(255, 255, 255, 0.3) 56%, rgba(24, 74, 135, 0) 90%);
+}
+#celtic-specified .team-banner-cover {
+    background: linear-gradient(
+        0deg, 
+        rgba(0, 65, 35, 0.95) 10%,      /* Dark vintage green (1890s Celtic) */
+        rgba(0, 107, 55, 0.75) 35%,     /* Standard Celtic green */
+        rgba(0, 128, 64, 0.5) 50%,      /* Brighter highlight */
+        rgba(255, 255, 255, 0.2) 70%,   /* Subtle white hoops effect */
+        rgba(0, 107, 55, 0) 90%
+    );
+}
+#real-specified .team-banner-cover{
+    background: linear-gradient(0deg, rgba(18, 18, 18, 0.9) 10%,  rgba(123, 123, 123, 0.6) 38%, rgba(255, 255, 255, 0.33) 56%, rgba(24, 74, 135, 0) 90%);
+}
+#ajax-specified .team-banner-cover{
+    background: linear-gradient(
+        0deg,
+        rgba(193, 13, 33, 0.8) 10%,     /* Deep Ajax red */
+        rgba(213, 33, 53, 0.3) 30%,      /* Classic home shirt red */
+        rgba(255, 255, 255, 0.2) 56%,    /* White accent (for their stripe) */
+        rgba(213, 33, 53, 0) 90%         /* Fade to transparent */
+    );   
+}
+#ac_milan-specified .team-banner-cover{
+    background: linear-gradient(0deg, rgb(0, 0, 0,.9) 10%,  rgba(93, 27, 27, 0.6) 38%, rgba(102, 31, 44, 0.3) 56%, rgba(131, 23, 23, 0) 90%);
+}
+
+.club-identity{
+    width: 40rem;
+    bottom: 10rem;
+   position: absolute;
+   margin-left: 5rem;
+   display: flex;
+   flex-direction: column;
+   font-family: Saira Condensed;
+   gap:.5rem;
+   padding: 0;
+}
+.club-identity h1{
+    font-size: 7rem;
+    color: white;
+}
+.club-identity p{
+    font-size: 1.2rem;
+    color: white;
+    margin-left: .5rem;
+}
+.team-info{
+    width: 100%;
+   height: 30rem;
+    display: flex;
+    /* border: 1px solid black; */
+}
+.squad-photo{
+    /* flex-grow: 1; */
+    width: 50%;
+    overflow: hidden;
+    height: 100%;
+}
+.squad-photo img,
+.team-stats img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.team-stats{
+    display: flex;
+    /* flex-grow: 1; */
+    width: 50%;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    font-family: Saira Condensed;
+}
+.team-stats-cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(13, 21, 24, 0.75);
+    display:flex ;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+.team-stats-cover h2{
+    font-size: 2rem;
+}
+.team-stats-container-values{
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+.team-stats-values{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+.team-stats-values:hover{
+    opacity: .5;
+    transition: .3s ease-in-out;
+}
+.team-stats-values i{
+    margin-top: 1rem;
+    font-size: 1.3rem;
+}
+.team-stats-values h3{
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+.stats-desc{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.team-wins-loss{
+    display: flex;
+    flex-direction: row;
+   
+    font-weight: bold;
+    gap: .5rem;
+}
+.team-wins-loss p{
+    font-size: 1.1rem;
+}
+.players{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: Saira Condensed;
+    justify-content: center;
+    align-items: center;
+}
+.players h1{
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top:4rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+#barca-specified .players h1{
+    color: rgb(104, 14, 47);
+}
+#dortmund-specified .players h1{
+    color: rgb(218, 203, 38);
+}
+#arsenal-specified .players h1{
+    color: rgb(146, 8, 8);
+}
+#galatasaray-specified .players h1{
+    color: rgb(146, 8, 8);
+}
+#west-specified .players h1{
+    color: rgb(104, 14, 47);
+}
+#ac_milan-specified .players h1{
+    color: rgb(146, 8, 8);
+}
+#psg-specified .players h1{
+    color: rgb(36, 8, 146);
+}
+#juventus-specified .players h1 {
+    color: black;
+}
+#celtic-specified .players h1{
+    color: rgb(2, 84, 45);
+}
+#real-specified .players h1{
+    color: rgb(61, 61, 61);
+}
+#ajax-specified .players h1{
+    color: rgba(193, 13, 33, 0.8);
+}
+.positions{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scrollbar-width: 0px;
+    height: 100%;
+}
+.players-positions{
+    margin-top: 5rem;
+}
+.players .positions h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    text-align: start;
+
+}
+#barca-specified .players .positions .players-positions{
+    color: rgb(104, 14, 47);
+}
+#dortmund-specified .players .positions .players-positions{
+    color: rgb(218, 203, 38);
+}
+#arsenal-specified .players .positions .players-positions{
+    color: rgb(133, 4, 4);
+}
+#galatasaray-specified .players .positions .players-positions{
+    color: rgb(133, 4, 4);
+}
+#west-specified .players .positions .players-positions{
+    color: rgb(104, 14, 47);
+    
+}
+#ac_milan-specified .players .positions .players-positions{
+    color: rgb(133, 4, 4);
+}
+#psg-specified .players .positions .players-positions{
+color: rgb(36, 8, 146);
+   
+}
+#juventus-specified .players .positions .players-positions {
+    color: black;
+}
+#celtic-specified .players .positions .players-positions{
+    color: rgb(2, 84, 45);    
+}
+#real-specified .players .positions .players-positions{
+    color: rgb(61, 61, 61);
+}
+#ajax-specified .players .positions .players-positions{
+    color: rgba(193, 13, 33, 0.8);
+}
+
+.player-list{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 18rem);
+   gap: 2rem;
+   overflow-x: auto;
+   padding-bottom: 1rem;
+   overflow-y: hidden;
+}
+.player{
+    height: 27rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+box-shadow: 0px 8px 20px 0px rgba(2, 2, 2, 0.5);
+transition: .5s ease-in-out;
+
+}
+.player:hover{
+    box-shadow: 0px 8px 20px 0px rgba(2, 2, 2, 0.5); 
+    transform: scale(1.025);
+transition: .5s ease-in-out;
+
+}
+#barca-specified .player{
+    background-color:rgb(104, 14, 47);
+}
+#arsenal-specified .player{
+    background-color:rgb(18, 18, 18);
+    
+}
+#galatasaray-specified .player{
+    background-color:rgb(18, 18, 18);
+    
+}
+#dortmund-specified .player{
+    background-color:rgb(21, 21, 21);
+
+}
+#west-specified .player{
+    background-color:rgb(104, 14, 47);
+}
+#ac_milan-specified .player{
+    background-color:rgb(18, 18, 18);
+}
+#juventus-specified .player{
+    background-color:rgb(18, 18, 18);
+}
+#psg-specified .player{
+    background-color:rgb(17, 12, 43);
+}
+#celtic-specified .player{
+background-color:  rgba(0, 65, 35, 0.95);
+}
+#real-specified .player{
+    background-color:rgb(21, 21, 21);
+}
+#ajax-specified .player{
+    background-color:rgb(255, 227, 227);
+}
+
+.player:hover img{
+transform: scale(1.03);
+transition: .5s ease-in-out;
+
+}
+.player img{
+    width: 100%;
+    height: 100%;
+    transition: .5s ease-in-out;
+    object-fit: cover;
+    position: absolute;
+    bottom: -1rem;
+}
+.player-cover{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#barca-specified .player-cover{
+    background: linear-gradient(0deg,  rgba(64, 27, 40, 0.9) 20%,  rgba(64, 27, 40, 0.6) 38%, rgba(93, 38, 57, 0.3) 56%, rgba(24, 74, 135, 0) 90%);
+
+}
+#dortmund-specified .player-cover{
+    background: linear-gradient(0deg, rgb(0, 0, 0,.9) 10%,  rgba(64, 60, 27, 0.422) 38%, rgba(128, 110, 43, 0.252) 46%, rgba(24, 74, 135, 0) 90%);
+    
+
+}
+#arsenal-specified .player-cover{
+    background: linear-gradient(0deg,  rgba(101, 2, 2, 0.95) 20%,  rgba(71, 29, 29, 0.3) 38%, rgba(103, 31, 31, 0.15) 56%, rgba(24, 74, 135, 0) 90%);
+
+}
+#galatasaray-specified .player-cover{
+    background: linear-gradient(0deg,  rgba(101, 2, 2, 0.9) 20%,  rgba(71, 29, 29, 0.3) 38%, rgba(103, 31, 31, 0.15) 56%, rgba(24, 74, 135, 0) 90%);
+
+}
+#west-specified .player-cover{
+    background: linear-gradient(0deg,  rgba(64, 27, 40, 0.9) 20%,  rgba(64, 27, 40, 0.6) 38%, rgba(93, 38, 57, 0.3) 56%, rgba(24, 74, 135, 0) 90%);
+}
+#ac_milan-specified .player-cover{
+    background: linear-gradient(0deg,  rgba(19, 0, 0, 0.9) 20%,  rgba(62, 25, 25, 0.6) 38%, rgba(53, 15, 15, 0.3) 56%, rgba(24, 74, 135, 0) 90%);
+
+}
+#psg-specified .player-cover{
+    background: linear-gradient(0deg,  rgba(9, 5, 34, 0.9) 20%,  rgba(18, 17, 44, 0.679) 38%, rgba(10, 7, 42, 0.241) 56%, rgba(24, 74, 135, 0) 90%);
+
+}
+#juventus-specified .player-cover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.4) 38%, rgba(255, 255, 255, 0.1) 50%, rgba(24, 74, 135, 0) 90%);
+}
+#celtic-specified .player-cover{
+    background: linear-gradient(
+    0deg, 
+    rgba(0, 65, 35, 0.9) 10%,      /* Dark vintage green (1890s Celtic) */
+    rgba(0, 107, 55, 0.4) 35%,     /* Standard Celtic green */
+    rgba(0, 128, 64, 0.1) 50%,      /* Brighter highlight */
+    rgba(255, 255, 255, 0) 70%,   /* Subtle white hoops effect */
+    rgba(0, 107, 55, 0) 90%   
+    )
+}
+#real-specified .player-cover{
+    background: linear-gradient(0deg, rgba(33, 33, 33, 0.9) 10%,  rgba(56, 56, 56, 0.373) 38%, rgba(137, 137, 137, 0.221) 56%, rgba(24, 74, 135, 0) 90%); 
+
+}
+#ajax-specified .player-cover{
+    background: linear-gradient(
+        0deg, 
+        rgba(193, 13, 33, 0.9) 20%,  /* Red gradient overlay */
+        rgba(193, 13, 33, 0.2) 40%,
+        transparent 50%
+    );
+}
+.player-cover-content{
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.player-name-position{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 90%;
+    color: whitesmoke;
+}
+.player-name-position #player_name{
+font-size:2.3rem;
+}
+.player_profile_btn{
+    font-size: 1.3rem;
+    font-family: Saira Condensed;
+    color: whitesmoke;
+    border-top: 1px solid whitesmoke;
+    width: 100%;
+   padding: .8rem;
+    background: transparent;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    transition: .4s ease-in-out;
+    cursor: pointer;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: transparent;
+}
+#barca-specified .player:hover .player_profile_btn{
+    background-color: rgb(168, 5, 64);
+    transition: .4s ease-in-out;
+
+}
+#dortmund-specified .player:hover .player_profile_btn{
+    background-color: rgb(201, 175, 43);
+    transition: .4s ease-in-out;
+
+}
+#arsenal-specified .player:hover .player_profile_btn{
+    background-color: rgb(168, 5, 5);
+    transition: .4s ease-in-out;
+
+}
+#galatasaray-specified .player:hover .player_profile_btn{
+    background-color: rgb(168, 5, 5);
+    transition: .4s ease-in-out;
+
+}
+#west-specified .player:hover .player_profile_btn{
+    background-color: rgb(168, 5, 64);
+    transition: .4s ease-in-out;
+}
+#ac_milan-specified .player:hover .player_profile_btn{
+    background-color: rgb(168, 5, 5);
+    transition: .4s ease-in-out;
+
+}
+#psg-specified .player:hover .player_profile_btn{
+    background-color: rgb(11, 6, 104);
+    transition: .4s ease-in-out;
+
+}
+#juventus-specified .player:hover .player_profile_btn {
+    background-color: black;
+    transition: .4s ease-in-out;
+}
+#celtic-specified .player:hover .player_profile_btn{
+    background-color:  rgba(0, 65, 35, 0.95);
+    transition: .4s ease-in-out;
+
+}
+#real-specified .player:hover .player_profile_btn{
+    background-color: rgb(34, 34, 34);
+    transition: .4s ease-in-out;
+
+}
+#ajax-specified .player:hover .player_profile_btn{
+    background-color: rgb(183, 0, 0);
+    transition: .4s ease-in-out;
+
+}
+
+
+#barca-specified .player .player_profile_btn:hover{
+    background-color: rgb(204, 4, 78);
+    transition: .4s ease-in-out;
+
+}
+#dortmund-specified .player .player_profile_btn:hover{
+    background-color: rgb(255, 213, 0);
+    transition: .4s ease-in-out;
+
+}
+#arsenal-specified .player .player_profile_btn:hover{
+    background-color: rgb(218, 0, 0);
+    transition: .4s ease-in-out;
+
+}
+#galatasaray-specified .player .player_profile_btn:hover{
+    background-color: rgb(233, 208, 18);
+    transition: .4s ease-in-out;
+
+}
+#west-specified .player .player_profile_btn:hover{
+    background-color: rgb(204, 4, 78);
+    transition: .4s ease-in-out;
+
+}
+#ac_milan-specified .player .player_profile_btn:hover{
+    background-color: rgb(218, 0, 0);
+    transition: .4s ease-in-out;
+
+}
+#psg-specified .player .player_profile_btn:hover{
+    background-color: rgb(2, 2, 156);
+    transition: .4s ease-in-out;
+
+}
+#juventus-specified .player .player_profile_btn:hover {
+    background-color: #333;
+    transition: .4s ease-in-out;
+}
+#celtic-specified .player .player_profile_btn:hover{
+    background-color: rgb(225, 225, 225);
+    transition: .4s ease-in-out;
+    color:  rgba(0, 65, 35, 0.95);
+
+}
+#real-specified .player .player_profile_btn:hover{
+    background-color: rgb(71, 71, 71);
+    transition: .4s ease-in-out;
+
+}
+#ajax-specified .player .player_profile_btn:hover{
+    background-color: rgb(245, 214, 214);
+    transition: .4s ease-in-out;
+    color: rgb(251, 0, 0);
+
+}
+.player_info{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.53);
+    backdrop-filter: blur(5px); 
+    transition: .5s ease-in-out;
+    font-family: Saira Condensed;
+    display: none;
+}
+.player_info.active{
+    display: flex;
+    z-index: 500;
+
+}
+.player_info_content{
+    width: 50rem;
+    display: flex;
+    flex-direction: row;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    box-shadow: 0 0 10px rgb(7, 7, 6,.5);
+    gap: 2rem;
+}
+.player_img{
+    width: 15.5rem;
+    height: 25rem;
+    overflow: hidden;
+    background-color: rgba(51, 51, 51, 0.519);
+    display: flex;
+    border-radius: 2rem;
+    position: relative;
+}
+.player_img .player_profile_club_logo{
+    width: 100%;
+    height: 100%;
+    filter: blur(1.5rem);
+    align-self: center;
+    justify-self: center;
+
+}
+.player_info_pic{
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+.player_info_pic img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -3rem;
+    object-fit: cover;
+    margin-left: auto;
+}
+.player_individual_info{
+    height: 25rem;
+    width:33rem;
+   display: flex;
+   flex-direction: column;
+   gap: 2;
+   padding: 1rem;
+}
+#barca-specified .player_individual_info h2{
+    font-size: 2rem;
+    color: rgb(104, 14, 47);
+}
+#dortmund-specified .player_individual_info h2{
+    font-size: 2rem;
+color: rgb(218, 203, 38);
+}
+
+#arsenal-specified .player_individual_info h2{
+    font-size: 2rem;
+    color: rgb(176, 5, 5);
+}
+
+#west-specified .player_individual_info {
+    font-size: 2rem;
+    color: rgb(104, 14, 47);
+}
+#ac_milan-specified .player_individual_info h2{
+    font-size: 2rem;
+    color: rgb(176, 5, 5);
+}
+#psg-specified .player_individual_info #player_name{
+    font-size: 2rem;
+    color: rgb(5, 20, 154);
+    
+}
+#juventus-specified .player_individual_info h2 {
+    font-size: 2rem;
+    color: black;
+}
+#celtic-specified .player_individual_info h2{
+    font-size: 2rem;
+color: rgb(62, 65, 240);
+
+}
+#real-specified .player_individual_info h2{
+    font-size: 2rem;
+    color: rgb(61, 61, 61);
+
+}
+#ajax-specified .player_individual_info h2{
+    font-size: 2rem;
+    color: rgb(5, 20, 154);
+    
+}
+
+#barca-specified .player_individual_info h3{
+    font-size: 1.3rem;
+    color: rgb(104, 14, 47);
+}
+#dortmund-specified .player_individual_info h3{
+    font-size: 1.3rem;
+color: rgb(218, 203, 38);
+}
+#arsenal-specified .player_individual_info h3{
+    font-size: 1.3rem;
+    color: rgb(176, 5, 5);
+    
+}
+#galatasaray-specified .player_individual_info h3{
+    font-size: 1.3rem;
+    color: rgb(176, 5, 5);
+    
+}
+#west-specified .player_individual_info h3{
+    font-size: 1.3rem;
+    color: rgb(104, 14, 47);
+    
+}
+#ac_milan-specified .player_individual_info h3{
+    font-size: 1.3rem;
+    color: rgb(176, 5, 5);
+    
+}
+#psg-specified .player_individual_info h3{
+    font-size: 1.3rem;
+    color: rgb(5, 20, 154);
+    
+}
+#inter_milan-specified .player_individual_info h3{
+    font-size: 1.3rem;
+    color: black;
+    
+}
+#celtic-specified .player_individual_info h3{
+    font-size: 1.3rem;
+color: rgb(62, 65, 240);
+
+}
+#real-specified .player_individual_info h3{
+    font-size: 1.3rem;
+    color: rgb(61, 61, 61);
+}
+#ajax-specified .player_individual_info h3{
+    font-size: 1.3rem;
+    color: rgb(5, 20, 154);
+    
+}
+
+.player_information{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 15rem);
+   gap: .5rem;
+   margin-top: 1.3rem;
+
+}
+.player_information div{
+    display: flex;
+    flex-direction: row;
+    gap: 1.3rem;
+   align-items: flex-start;
+   justify-content: flex-start;
+}
+.player_information div p{
+    font-size: 1.3rem;
+}
+.player_info #player_cancel_btn{
+    position: absolute;
+    top: 4rem;
+    right: 5rem;
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+
+}
+#player_cancel_btn:hover{
+    color: rgb(241, 4, 4);
+    
+    transition: .3s ease-in-out;
+}
+.nav_links1{
+    display: flex;
+    position: fixed;
+    color: beige;
+    top: 0;
+    z-index: 999;
+}
+
+
+
+.team-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    color: white;
+    z-index: 900;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 100%;
+    margin: 0 auto;
+
+}
+
+.nav-title {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.team-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.team-links li {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.team-links li:hover {
+    background-color: #333;
+}
+
+.Team-container {
+    display: none;
+}
+
+.Team-container.active {
+    display: block;
+}
+
+/* Adjust the container to account for the fixed nav */
+#container {
+    margin-top: 80px; /* Height of the nav */
+}
+.team-links li.active {
+    background-color: #555;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/*for the hamburder menu*/
+.hamburger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 21px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+}
+
+.hamburger .bar {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.hamburger .bar:nth-child(1) {
+    top: 0;
+}
+
+.hamburger .bar:nth-child(2),
+.hamburger .bar:nth-child(3) {
+    top: 9px;
+}
+
+
+.hamburger.open .bar:nth-child(1) {
+    top: 9px;
+    width: 0%;
+    left: 50%;
+}
+
+.hamburger.open .bar:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.hamburger.open .bar:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.hamburger.open .bar:nth-child(4) {
+    top: 9px;
+    width: 0%;
+    left: 50%;
+}
+/* Scroll arrows for mobile */
+.player-list-container {
+    position: relative;
+    width: 100%;
+}
+
+.scroll-arrows {
+    display: none;
+}
+/* Scroll arrows for mobile player lists */
+.player-list-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.scroll-arrows {
+    display: none;
+}
+
+
+
+
+/* Responsive styles */
+@media (max-width: 1300px){
+    .team-info{
+        height: 22rem;
+    }
+    .team-stats-cover{
+        gap: 1rem;
+    }
+    .team-stats-cover h2{
+        font-size: 1.5rem;
+    }
+    .team-stats-values h3{
+        font-size: 2.5rem;
+    }
+    .stats-desc{
+        font-size: 1rem;
+    }
+    .team-wins-loss p{
+        font-size: .8rem;
+    }
+}
+@media (max-width: 1200px) {
+    .player-list{
+        grid-template-columns: repeat(3, 17rem);
+        overflow-x: auto;
+    }
+    .team-info{
+        height: 23rem;
+    }
+    .team-stats-cover h2{
+        font-size: 1.8rem;
+    }
+    .team-stats-container-values{
+        gap: 2rem;
+    }
+}
+/* Add this to your media queries section */
+@media (min-width: 850px) and (max-width: 1270px) {
+    .team-links {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 10px;
+        padding-right: 5rem;
+        scrollbar-width: none; /* For Firefox */
+        -ms-overflow-style: none; /* For IE and Edge */
+    }
+    
+    .team-links::-webkit-scrollbar {
+        display: none; /* For Chrome, Safari and Opera */
+    }
+    
+    .team-links li {
+        flex: 0 0 auto;
+        padding: 0.5rem 1.5rem; /* Increased horizontal padding */
+    }
+    
+    /* Add scroll arrows container */
+    .nav-container {
+        position: relative;
+        gap: 2rem;
+    }
+    
+    .nav-scroll-arrows {
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: linear-gradient(90deg, rgba(26,26,26,0) 0%, rgba(26,26,26,1) 20%);
+        padding-left: 30px;
+    }
+    
+    .nav-scroll-arrow {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-scroll-arrow:hover {
+        background: rgba(255, 255, 255, 0.4);
+    }
+    
+    .nav-scroll-arrow.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/* Make sure the hamburger menu doesn't show in this range */
+@media (min-width: 850px) {
+    .hamburger {
+        display: none !important;
+    }
+}
+
+/*hamburger*/
+@media (max-width: 980px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .team-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        align-items: center;
+        padding: .5rem 0;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+    }
+    
+    .team-links.active {
+        max-height: 90vh;
+        padding: 1rem 0;
+    }
+    
+    .team-links li {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 0;
+    }
+    
+    .nav-container {
+        padding: 1rem;
+    }
+}
+@media (max-width: 1100px){
+    .club-identity{
+        margin-left: 1rem;
+        bottom: 7rem;
+        width: 88%;
+    }
+    .club-identity h1{
+        font-size: 4.5rem;
+    }
+}
+@media (max-width: 980px){
+    .scroll-arrows {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 60%;
+        width: 100%;
+        transform: translateY(-50%, 50%);
+        z-index: 10;
+        pointer-events: none;
+    }
+    
+    .scroll-arrow {
+        pointer-events: all;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 20;
+    }
+    
+    .scroll-arrow:hover {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .scroll-arrow.left {
+        margin-left: 0px;
+    }
+    
+    .scroll-arrow.right {
+        margin-right: 0px;
+    }
+    .player-list {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 1rem 0;
+        /* margin: 0 -1rem; */
+        width: calc(95% + 0rem);
+        grid-template-columns: unset;
+        overflow-y: hidden;
+        gap: 1rem;
+    }
+    .player {
+        flex: 0 0 auto;
+        width: 35vw;
+        min-width: 250px;
+        scroll-snap-align: start;
+        scroll-margin: 1rem;
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .player-list::-webkit-scrollbar {
+        display: none;
+    }
+   
+
+}
+
+@media (max-width: 900px){
+
+    .player-list {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 1rem 0;
+        /* margin: 0 -1rem; */
+        width: calc(98% + 0rem);
+        grid-template-columns: unset;
+        overflow-y: hidden;
+    }
+    .player {
+        flex: 0 0 auto;
+        width: 42vw;
+        min-width: 180px;
+        scroll-snap-align: start;
+        scroll-margin: 1rem;
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .player-list::-webkit-scrollbar {
+        display: none;
+    }
+   
+        .team-info{
+            height: 19rem;
+        }
+        .team-stats-cover{
+            gap: 1rem;
+        }
+        .team-stats-cover h2{
+            font-size: 1.5rem;
+        }
+        .team-stats-values h3{
+            font-size: 2.5rem;
+        }
+        .stats-desc{
+            font-size: 1rem;
+        }
+        .team-wins-loss p{
+            font-size: .8rem;
+        }
+      
+    
+}
+@media (max-width: 680px){
+    .team-info{
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+    .squad-photo{
+        width: 100%;
+        height: 20rem;
+    }
+    .squad-photo img{
+        object-fit: cover;
+    }
+    .team-stats{
+        width: 100%;
+        height: 47rem;
+    }
+    .team-stats-container-values{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    .team-stats-values{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .team-stats-values h3{
+        font-size: 2.5rem;
+    }
+    .team-wins-loss p{
+        font-size: 1rem;
+    }
+    .stats-desc{
+        font-size: 1.8rem;
+    }
+   
+   
+}
+
+@media (max-width: 620px){
+    .team-banner{
+        height: 90vh;
+    }
+    .club-identity{
+        margin-left: 1rem;
+        bottom: 7rem;
+        width: 88%;
+    }
+    .club-identity h1{
+        font-size: 3.7rem;
+    }
+  
+    .players h1{
+        font-size: 2.3rem;
+    }
+    div.players > div > h2{
+        font-size: 2.3rem;
+    }
+  
+    .player-list {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 1rem 0;
+        /* margin: 0 -1rem; */
+        width: calc(100% + 0rem);
+        grid-template-columns: unset;
+        overflow-y: hidden;
+    }
+    .player {
+        flex: 0 0 auto;
+        width: 55vw;
+        min-width: 250px;
+        scroll-snap-align: start;
+        scroll-margin: 1rem;
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .player-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .player-list {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .player_info #player_cancel_btn{
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 2rem;
+    }
+    #container > div.player_info.active > div{
+        width:80% ;
+        overflow-y: auto;
+        flex-direction: column;
+        height: 70%;
+    }
+    .player_info {
+        align-items: flex-start;
+        padding: 2rem 0;
+    }
+    
+    .player_info_content {
+        width: 90%;
+        max-height: 90vh; 
+        flex-direction: column;
+        overflow-y: auto;
+        height: auto; 
+        overflow-x: hidden;
+        scrollbar-width: none;
+        margin-top: 2rem;
+    }
+    
+    .player_img {
+        width: 100%;
+        height: auto; 
+        aspect-ratio: 2/3; 
+        min-height: 300px;
+        flex-shrink: 0; 
+    }
+    
+    .player_individual_info {
+        width: 100%;
+        height: auto;
+        overflow: visible;
+    }
+    
+    .player_information {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        height: auto;
+    }
+    
+    
+}
+@media (max-width: 450px){
+    .player-list {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 1rem 0;
+        /* margin: 0 -1rem; */
+        width: calc(100% + 0rem);
+        grid-template-columns: unset;
+        overflow-y: hidden;
+    }
+    .player {
+        flex: 0 0 auto;
+        width: 70vw;
+        min-width: 250px;
+        scroll-snap-align: start;
+        scroll-margin: 1rem;
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .player-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .player-list {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(30%);
+    transition: all 1s;
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transition: all 1s;
+    transform: translateY(0);
+}
+.hidden2{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(10%);
+    transition: all 1s;
+}
+.show2{
+    opacity: 1;
+    filter: blur(0);
+    transition: all 1s;
+    transform: translateX(0);
+}
+.hidden3{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-20%);
+    transition: all 1s;
+}
+.show3{
+    opacity: 1;
+    filter: blur(0);
+    transition: all 1s;
+    transform: translateX(0);
+}
+
+

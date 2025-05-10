@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Teams Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/landing page items/favicon.jpg" type="image/png"> 
+  <link rel="stylesheet" href="CSS/admin/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="spinner-overlay hidden">
+            <div class="spinner"></div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-futbol"></i> Football Admin</h2>
+            </div>
+            <div class="sidebar-menu">
+                <div class="menu-item active" data-section="add-player">
+                    <i class="fas fa-user-plus"></i> Add Player
+                </div>
+                <div class="menu-item" data-section="manage-players">
+                    <i class="fas fa-users-cog"></i> Manage Players
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <h1>Football Teams Administration</h1>
+                <div>
+                    <button class="btn btn-danger" id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+
+            <!-- Add Player Section -->
+            <div class="admin-card" id="add-player-section">
+                <div class="card-header">
+                    <h2><i class="fas fa-user-plus"></i> Add New Player</h2>
+                </div>
+                <form id="add-player-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="player-name">Player Name</label>
+                            <input type="text" id="player-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="player-age">Age</label>
+                            <input type="number" id="player-age" class="form-control" min="16" max="50" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="player-height">Height</label>
+                            <input type="text" id="player-height" class="form-control" placeholder="e.g. 1.85m" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="player-weight">Weight</label>
+                            <input type="text" id="player-weight" class="form-control" placeholder="e.g. 75kg" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="player-team">Team</label>
+                            <select id="player-team" class="form-control" required>
+                                <option value="">Select Team</option>
+                                <!-- Teams will be populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="player-position">Position</label>
+                            <select id="player-position" class="form-control" required>
+                                <option value="">Select Position</option>
+                                <option value="Goalkeeper">Goalkeeper</option>
+                                <option value="Defender">Defender</option>
+                                <option value="Midfielder">Midfielder</option>
+                                <option value="Forward">Forward</option>
+                                <option value="Manager">Manager</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="player-image-upload">Profile Image</label>
+                        <input type="file" id="player-image-upload" class="form-control" accept="image/*">
+                        <div id="image-preview-container" style="margin-top: 10px; display: none;">
+                            <img id="image-preview" src="#" alt="Preview" style="max-width: 150px; max-height: 150px;">
+                        </div>
+                        <input type="hidden" id="player-image" name="player-image">
+                    </div>
+
+                    <!-- Dynamic stats based on position -->
+                    <div class="player-stats" id="player-stats-section">
+                        <h3>Player Statistics</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="player-appearances">Appearances</label>
+                                <input type="number" id="player-appearances" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="form-group" id="goals-group">
+                                <label for="player-goals">Goals</label>
+                                <input type="number" id="player-goals" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="form-group" id="assists-group">
+                                <label for="player-assists">Assists</label>
+                                <input type="number" id="player-assists" class="form-control" min="0" value="0">
+                            </div>
+                        </div>
+                        <div class="form-row" id="saves-group">
+                            <div class="form-group">
+                                <label for="player-saves">Saves</label>
+                                <input type="number" id="player-saves" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="player-tackles">Tackles</label>
+                                <input type="number" id="player-tackles" class="form-control" min="0" value="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 20px;">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Save Player
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Manage Players Section -->
+            <div class="admin-card hidden" id="manage-players-section">
+                <div class="card-header">
+                    <h2><i class="fas fa-users-cog"></i> Manage Players</h2>
+                    <div class="form-group" style="margin-bottom: 0; width: 300px;">
+                        <input type="text" id="player-search" class="form-control" placeholder="Search players...">
+                    </div>
+                </div>
+                
+                <table class="players-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Team</th>
+                            <th>Position</th>
+                            <th>Age</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="players-table-body">
+                        <!-- Players will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Player Modal (hidden by default) -->
+    <div class="admin-card hidden" id="edit-player-modal" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; max-width: 800px; z-index: 1000; max-height: 80vh; overflow-y: auto;">
+        <div class="card-header">
+            <h2><i class="fas fa-edit"></i> Edit Player</h2>
+            <button class="btn btn-danger" id="close-edit-modal">
+                <i class="fas fa-times"></i> Close
+            </button>
+        </div>
+        <form id="edit-player-form">
+            <input type="hidden" id="edit-player-id">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="edit-player-name">Player Name</label>
+                    <input type="text" id="edit-player-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-player-age">Age</label>
+                    <input type="number" id="edit-player-age" class="form-control" min="16" max="50" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="edit-player-height">Height</label>
+                    <input type="text" id="edit-player-height" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-player-weight">Weight</label>
+                    <input type="text" id="edit-player-weight" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="edit-player-team">Team</label>
+                    <select id="edit-player-team" class="form-control" required>
+                        <!-- Teams will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-player-position">Position</label>
+                    <select id="edit-player-position" class="form-control" required>
+                        <option value="Goalkeeper">Goalkeeper</option>
+                        <option value="Defender">Defender</option>
+                        <option value="Midfielder">Midfielder</option>
+                        <option value="Forward">Forward</option>
+                        <option value="Manager">Manager</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="edit-player-image-upload">Profile Image</label>
+                <input type="file" id="edit-player-image-upload" class="form-control" accept="image/*">
+                <div id="edit-image-preview-container" style="margin-top: 10px;">
+                    <img id="edit-image-preview" src="#" alt="Preview" style="max-width: 150px; max-height: 150px;">
+                </div>
+                <input type="hidden" id="edit-player-image" name="edit-player-image">
+            </div>
+
+            <div class="player-stats">
+                <h3>Player Statistics</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-player-appearances">Appearances</label>
+                        <input type="number" id="edit-player-appearances" class="form-control" min="0">
+                    </div>
+                    <div class="form-group" id="edit-goals-group">
+                        <label for="edit-player-goals">Goals</label>
+                        <input type="number" id="edit-player-goals" class="form-control" min="0">
+                    </div>
+                    <div class="form-group" id="edit-assists-group">
+                        <label for="edit-player-assists">Assists</label>
+                        <input type="number" id="edit-player-assists" class="form-control" min="0">
+                    </div>
+                </div>
+                <div class="form-row" id="edit-saves-group">
+                    <div class="form-group">
+                        <label for="edit-player-saves">Saves</label>
+                        <input type="number" id="edit-player-saves" class="form-control" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-player-tackles">Tackles</label>
+                        <input type="number" id="edit-player-tackles" class="form-control" min="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 20px;">
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-save"></i> Update Player
+                </button>
+                <button type="button" class="btn btn-danger" id="delete-player-btn" style="float: right;">
+                    <i class="fas fa-trash"></i> Delete Player
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="modal-overlay hidden" id="modal-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 999;"></div>
+
+  <script src="javascript/admin/admin.js"></script>
+</body>
+</html>
