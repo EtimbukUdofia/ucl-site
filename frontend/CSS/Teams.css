@@ -868,6 +868,20 @@ color: rgb(62, 65, 240);
     font-weight: bold;
     color: var(--primary-color);
 }
+.club-status{
+    width: 8rem;
+    padding: .5rem;
+    border:transparent;
+    border-radius: 5rem;
+    font-weight: 700;
+    color: white;
+}
+.club-status.absent{
+    background-color: rgb(255, 0, 0);
+}
+.club-status.present{
+    background-color: rgb(93, 222, 118);
+}
 
 /*for the hamburder menu*/
 .hamburger {

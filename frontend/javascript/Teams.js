@@ -114,7 +114,7 @@ window.addEventListener('resize', setupNavScroll);
 fetch('TeamData.json')
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        // console.log(data);
         
         // Create navigation links
         data.teams.forEach(team => {
@@ -139,6 +139,7 @@ fetch('TeamData.json')
                         <div class="club-identity hidden3">
                             <p>HOME | ${team.name}</p>
                             <h1 class="club-name">${team.name}</h1>
+                            ${team.eliminated ? " <button class='club-status absent'>Eliminated</button>":"<button class='club-status present'>Progress</button>"}    
                         </div>
                     </div>
                 </div>

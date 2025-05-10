@@ -25,6 +25,12 @@
                 <div class="menu-item" data-section="manage-players">
                     <i class="fas fa-users-cog"></i> Manage Players
                 </div>
+                <div class="menu-item" data-section="manage-teams">
+                    <i class="fas fa-flag"></i> Manage Teams
+                </div>
+                <div class="menu-item" data-section="live-updates">
+                    <i class="fas fa-broadcast-tower"></i> Live Updates
+                </div>
             </div>
         </div>
 
@@ -157,6 +163,126 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- Manage Teams Section -->
+            <div class="admin-card hidden" id="manage-teams-section">
+                <div class="card-header">
+                    <h2><i class="fas fa-flag"></i> Manage Teams</h2>
+                    <div class="form-group" style="margin-bottom: 0; width: 300px;">
+                        <input type="text" id="team-search" class="form-control" placeholder="Search teams...">
+                    </div>
+                </div>
+                
+                <div class="teams-grid" id="teams-grid">
+                    <!-- Teams will be populated by JavaScript -->
+                </div>
+            </div>
+            <!-- Live Updates Section -->
+            <div class="admin-card hidden" id="live-updates-section">
+                <div class="card-header">
+                    <h2><i class="fas fa-broadcast-tower"></i> Live Match Updates</h2>
+                </div>
+                
+                <div class="form-group">
+                    <h3>Current Live Matches</h3>
+                    <div id="live-matches-container">
+                        <!-- Live matches will be populated here -->
+                    </div>
+                    <button class="btn btn-primary" id="add-live-match-btn">
+                        <i class="fas fa-plus"></i> Add New Live Match
+                    </button>
+                </div>
+                
+                <div class="form-group" id="new-live-match-form" style="display: none;">
+                    <h3>Create New Live Match</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="live-match-team1">Team 1</label>
+                            <select id="live-match-team1" class="form-control">
+                                <!-- Teams will be populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="live-match-team2">Team 2</label>
+                            <select id="live-match-team2" class="form-control">
+                                <!-- Teams will be populated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="live-match-score1">Score 1</label>
+                            <input type="number" id="live-match-score1" class="form-control" min="0" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="live-match-score2">Score 2</label>
+                            <input type="number" id="live-match-score2" class="form-control" min="0" value="0">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="live-match-status">Match Status</label>
+                        <select id="live-match-status" class="form-control">
+                            <option value="LIVE">LIVE</option>
+                            <option value="UPCOMING">UPCOMING</option>
+                            <option value="HALFTIME">HALFTIME</option>
+                            <option value="ENDED">MATCH ENDED</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="live-match-minute">Current Minute</label>
+                        <input type="text" id="live-match-minute" class="form-control" placeholder="e.g. 45 or 90+3">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success" id="save-live-match-btn">
+                            <i class="fas fa-save"></i> Save Match
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancel-live-match-btn">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <h3>News Updates</h3>
+                    <div id="news-updates-container">
+                        <!-- News updates will be populated here -->
+                    </div>
+                    <button class="btn btn-primary" id="add-news-update-btn">
+                        <i class="fas fa-plus"></i> Add News Update
+                    </button>
+                </div>
+                
+                <div class="form-group" id="new-news-update-form" style="display: none;">
+                    <h3>Create News Update</h3>
+                    <div class="form-group">
+                        <label for="news-title">Title</label>
+                        <input type="text" id="news-title" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="news-content">Content</label>
+                        <textarea id="news-content" class="form-control" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="news-image-upload">Image</label>
+                        <input type="file" id="news-image-upload" class="form-control" accept="image/*">
+                        <div id="news-image-preview-container" style="margin-top: 10px; display: none;">
+                            <img id="news-image-preview" src="#" alt="Preview" style="max-width: 150px; max-height: 150px;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="news-author">Author</label>
+                        <input type="text" id="news-author" class="form-control" value="Admin">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success" id="save-news-update-btn">
+                            <i class="fas fa-save"></i> Save News
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancel-news-update-btn">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -254,6 +380,134 @@
                 </button>
                 <button type="button" class="btn btn-danger" id="delete-player-btn" style="float: right;">
                     <i class="fas fa-trash"></i> Delete Player
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Edit Team Modal (hidden by default) -->
+    <div class="admin-card hidden" id="edit-team-modal" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; max-width: 800px; z-index: 1000; max-height: 80vh; overflow-y: auto;">
+        <div class="card-header">
+            <h2><i class="fas fa-edit"></i> Edit Team</h2>
+            <button class="btn btn-danger" id="close-edit-team-modal">
+                <i class="fas fa-times"></i> Close
+            </button>
+        </div>
+        <form id="edit-team-form">
+            <input type="hidden" id="edit-team-id">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="edit-team-name">Team Name</label>
+                    <input type="text" id="edit-team-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-team-stadium">Stadium Name</label>
+                    <input type="text" id="edit-team-stadium" class="form-control" required>
+                </div>
+            </div>
+    
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="edit-team-capacity">Stadium Capacity</label>
+                    <input type="number" id="edit-team-capacity" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-team-matches">Matches Played</label>
+                    <input type="number" id="edit-team-matches" class="form-control" required>
+                </div>
+            </div>
+    
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="edit-team-goals-scored">Goals Scored</label>
+                    <input type="number" id="edit-team-goals-scored" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-team-goals-conceded">Goals Conceded</label>
+                    <input type="number" id="edit-team-goals-conceded" class="form-control" required>
+                </div>
+            </div>
+    
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="edit-team-victories">Victories</label>
+                    <input type="number" id="edit-team-victories" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-team-defeats">Defeats</label>
+                    <input type="number" id="edit-team-defeats" class="form-control" required>
+                </div>
+            </div>
+    
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="edit-team-draws">Draws</label>
+                    <input type="number" id="edit-team-draws" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-team-eliminated">Eliminated</label>
+                    <select id="edit-team-eliminated" class="form-control" required>
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                    </select>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="edit-team-about">About</label>
+                <textarea id="edit-team-about" class="form-control" rows="3" required></textarea>
+            </div>
+    
+            <div class="form-group">
+                <label for="edit-team-image-upload">Team Logo</label>
+                <input type="file" id="edit-team-image-upload" class="form-control" accept="image/*">
+                <div id="edit-team-image-preview-container" style="margin-top: 10px;">
+                    <img id="edit-team-image-preview" src="#" alt="Preview" style="max-width: 150px; max-height: 150px;">
+                </div>
+                <input type="hidden" id="edit-team-image" name="edit-team-image">
+            </div>
+    
+            <div class="form-group">
+                <label for="edit-team-squad-img-upload">Squad Image</label>
+                <input type="file" id="edit-team-squad-img-upload" class="form-control" accept="image/*">
+                <div id="edit-team-squad-img-preview-container" style="margin-top: 10px;">
+                    <img id="edit-team-squad-img-preview" src="#" alt="Preview" style="max-width: 150px; max-height: 150px;">
+                </div>
+                <input type="hidden" id="edit-team-squad-img" name="edit-team-squad-img">
+            </div>
+    
+            <div class="form-group">
+                <label for="edit-team-stadium-img-upload">Stadium Image</label>
+                <input type="file" id="edit-team-stadium-img-upload" class="form-control" accept="image/*">
+                <div id="edit-team-stadium-img-preview-container" style="margin-top: 10px;">
+                    <img id="edit-team-stadium-img-preview" src="#" alt="Preview" style="max-width: 150px; max-height: 150px;">
+                </div>
+                <input type="hidden" id="edit-team-stadium-img" name="edit-team-stadium-img">
+            </div>
+    
+            <div class="team-players">
+                <h3>Team Players</h3>
+                <table class="players-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Age</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="team-players-table-body">
+                        <!-- Players will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+    
+            <div class="form-group" style="margin-top: 20px;">
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-save"></i> Update Team
+                </button>
+                <button type="button" class="btn btn-primary" id="add-player-to-team-btn">
+                    <i class="fas fa-user-plus"></i> Add Player to Team
                 </button>
             </div>
         </form>

@@ -17,7 +17,8 @@
             "Goals_conceded":16,
             "victories":8,
             "defeats": 2,
-            "draws": 0
+            "draws": 0,
+            "eliminated":false
 
         },
         {
@@ -37,7 +38,8 @@
             "Goals_conceded":12,
             "victories":25,
             "defeats": 1,
-            "draws": 0
+            "draws": 0,
+            "eliminated":false
 
         },
         {
@@ -57,7 +59,9 @@
             "Goals_conceded":18,
             "victories":7,
             "defeats": 25,
-            "draws": 0
+            "draws": 0,
+            "eliminated":false
+
 
         },
         {
@@ -77,7 +81,9 @@
             "Goals_conceded": 12,
             "victories": 10,
             "defeats": 2,
-            "draws": 0
+            "draws": 0,
+            "eliminated":false
+
         },
        
         {
@@ -97,7 +103,9 @@
             "Goals_conceded":12,
             "victories":5,
             "defeats": 20,
-            "draws": 0
+            "draws": 0,
+            "eliminated":false
+
         },
         {
             "id": 6,
@@ -116,7 +124,9 @@
             "Goals_conceded":17,
             "victories":8,
             "defeats": 19,
-            "draws": 6
+            "draws": 6,
+            "eliminated":false
+
         },
         {
             "id": 7,
@@ -136,7 +146,9 @@
             "Goals_conceded":16,
             "victories":8,
             "defeats": 2,
-            "draws": 12
+            "draws": 12,
+            "eliminated":false
+
         },
         {
             "id": 8,
@@ -156,7 +168,9 @@
             "Goals_conceded":19,
             "victories":7,
             "defeats": 16,
-            "draws": 0
+            "draws": 0,
+            "eliminated":false
+
         },
         {
             "id": 9,
@@ -176,7 +190,9 @@
             "Goals_conceded":12,
             "victories":4,
             "defeats": 26,
-            "draws": 5
+            "draws": 5,
+            "eliminated":false
+
         },
         {
             "id": 10,
@@ -195,7 +211,9 @@
             "Goals_conceded": 15,
             "victories": 11,
             "defeats": 3,
-            "draws": 2
+            "draws": 2,
+            "eliminated":false
+
         },
         {
             "id": 11,
@@ -214,10 +232,29 @@
             "Goals_conceded": 15,
             "victories": 10,
             "defeats": 4,
-            "draws": 2
+            "draws": 2,
+            "eliminated":false
         }
 
     ],
+    "news": [
+        {
+            "title": "Real Madrid vs AC Milan: Toughest Match this Week",
+            "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste maiores minus magni non soluta sequi, doloremque consectetur, esse aperiam odit, voluptatem praesentium saepe assumenda recusandae nobis porro!",
+            "author": "FanBase",
+            "date": "February 15 2025",
+            "image": "images/landing-images/main-home-blog-list-2.jpg"
+        },
+        {
+            "title": "The Bowen Fans League Final Will Consist of a Women's Match",
+            "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste maiores minus magni non soluta sequi, doloremque consectetur, esse aperiam odit, voluptatem praesentium saepe assumenda recusandae nobis porro!",
+            "author": "Board",
+            "date": "February 15 2025",
+            "image": "images/landing-images/soccer-football-sports-player-woman-600nw-2191542517.webp"
+        }
+    ],
+    
+    "matches": [],
 "players": [
     {"id": 1, "name": "Marc-André ter Stegen", "age": 32, "height": "1.87m", "weight": "85kg", "position": "Goalkeeper", "team": "FC Barcelona", "appearances": 6, "saves": 10, 
     "profile_pic": "images/players/barcelona/TER_STEGEN-min-removebg-preview.png"},
