@@ -9,6 +9,9 @@ import path from "path";
 import fs from "fs";
 import fsPromises from "fs/promises";
 
+import teamRoutes from "./routes/team.route.js";
+import playerRoutes from "./routes/player.route.js";
+
 dotenv.config();
 
 const app = express();
@@ -41,6 +44,9 @@ if (process.env.NODE_ENV === "development") {
 app.get("/", (req, res) => {
   return res.status(200).json({ success: true, message: "Hello from server" });
 });
+
+app.use("/api/v0/teams", teamRoutes);
+app.use("/api/v0/players", playerRoutes);
 
 app.use((req, res) => {
   res.status(404).json({
