@@ -61,7 +61,7 @@ app.use((err, req, res, next) => {
 });
 
 mongoose.connect(process.env.MONGO_URI).then((promise) => {
-  console.log("COnnected to MongoDB:", promise.connection.host);
+  console.log("Connected to MongoDB:", promise.connection.host);
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
