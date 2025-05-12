@@ -5,9 +5,9 @@ import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import helmet from "helmet";
 import compression from "compression";
+import mongoose from "mongoose";
 import path from "path";
 import fs from "fs";
-import fsPromises from "fs/promises";
 
 import teamRoutes from "./routes/team.route.js";
 import playerRoutes from "./routes/player.route.js";
@@ -42,7 +42,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 app.get("/", (req, res) => {
-  return res.status(200).json({ success: true, message: "Hello from server" });
+  res.status(200).json({ success: true, message: "Hello from server" });
 });
 
 app.use("/api/v0/teams", teamRoutes);
@@ -60,6 +60,12 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: `Internal Server Error` });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+mongoose.connect(process.env.MONGO_URI).then((promise) => {
+  console.log("COnnected to MongoDB:", promise.connection.host);
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}).catch((err) => {
+  console.error("MongoDB connection failed:", err.message);
+  process.exit(1);
+})
